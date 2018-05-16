@@ -15,6 +15,8 @@ setup(name='TranslationMethod',
 
       license='MIT',
 
+      install_requires = ['numpy'],
+
       packages=find_packages(),
 
       zip_safe=False)
