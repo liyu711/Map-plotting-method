@@ -7,5 +7,8 @@ class Vector_math(object):
 		pass
 
 	@staticmethod
+	def translate_drone_relative_to_gps(self, waypoint):
+		result = waypoint
+		return waypoint
 	
 		
