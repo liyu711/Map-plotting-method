@@ -1,14 +1,22 @@
 import math
-import numpy as np
+import numpy
 
-class Vector_math(object):
-	"""docstring for Vector_math"""
+class VectorMath(object):
+
 	def __init__(self):
 		pass
 
 	@staticmethod
-	def translate_drone_relative_to_gps(self, waypoint):
-		result = waypoint
-		return waypoint
-	
-		
+	def get_magnitude(vector1, vector2):
+		# vector1 is the initial point
+		# vector2 is the point you want to reach
+		difference = numpy.subtract(vector2, vector1)
+		magnitude = numpy.linalg.norm(difference)
+
+		return magnitude
+
+	@staticmethod
+	def get_magnitude(vector):
+		magnitude = numpy.linalg.norm(vector)
+
+		return magnitude
