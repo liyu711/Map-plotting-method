@@ -133,6 +133,16 @@ class Obstacle(object):
 
 		return status
 
+	def filtering_path(self, obstacle):
+		# self adjusting its attempted path according to obstacle
+		loop_index = 0
+		while loop_index < len(self.attempted_path):
+			check_status = obstacle.check_if_point_is_inside_the_obstacle(self.attempted_path[loop_index])
+			if check_status:
+				del self.attempted_path[loop_index]
+				loop_index -= 1
+			loop_index += 1
+
 	def move(self, fin_point):
 		current_x = self.current_point[0]
 		current_y = self.current_point[1]

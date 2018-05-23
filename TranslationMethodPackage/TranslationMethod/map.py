@@ -23,4 +23,6 @@ class Map(object):
 	def reset_obstacles(self):
 		self.obstacles = []
 
-	
+	def add_obstacles(self, obstacles):
+		for obstacle in obstacles:
+			self.add_obstacle(obstacle)	

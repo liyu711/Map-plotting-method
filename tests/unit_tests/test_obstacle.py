@@ -10,6 +10,7 @@ class ObstacleTestCase(unittest.TestCase):
 		self.test_point1 = numpy.array([1,1,1])
 		self.test_point2 = numpy.array([1,1,2])
 		self.test_point3 = numpy.array([1,1,0])
+		self.obstacle2  = Obstacle(2, numpy.array([-2,0,0]))
 
 	def test_ini(self):
 		for point in self.obstacle1.boundary_points:
@@ -27,3 +28,11 @@ class ObstacleTestCase(unittest.TestCase):
 		self.assertEqual(result2, True)
 		self.assertEqual(result3, False)
 		self.assertEqual(result4, True)
+
+	def test_filtering_path(self):
+		self.obstacle2.reset_attempted_path()
+		self.obstacle2.filtering_path(self.obstacle1)
+		print(self.obstacle2.attempted_path)
+
+		sss
+
