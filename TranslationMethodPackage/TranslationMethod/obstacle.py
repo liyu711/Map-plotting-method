@@ -78,6 +78,36 @@ class Obstacle(object):
 			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]+1])
 		]
 
+	def update_attempted_path(self):
+		self.attempted_path = [
+			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]-1])
+			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]-1])
+			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]-1])
+			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]-1])
+			numpy.array([self.current_point[0], self.current_point[1], self.current_point[2]-1])
+			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]-1])
+			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]-1])
+			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]-1])
+			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]-1])
+			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]])
+			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]])
+			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]])
+			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]])
+			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]])
+			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]])
+			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]])
+			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]])
+			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]+1])
+			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]+1])
+			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]+1])
+			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]+1])
+			numpy.array([self.current_point[0], self.current_point[1], self.current_point[2]+1])
+			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]+1])
+			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]+1])
+			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]+1])
+			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]+1])
+		]
+
 	def get_side(self):
 		return self.side_length
 
