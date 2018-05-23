@@ -8,15 +8,74 @@ class Obstacle(object):
 		self.side_length = side_length
 		self.center = center
 		self.current_point = center
+		self.current_point = center
 		self.boundary_points = [
-			numpy.array([center[0]-side_length/2, center[1]-side_length/2, center[2]-side_length/2]),
-			numpy.array([center[0]-side_length/2, center[1]-side_length/2, center[2]+side_length/2]),
-			numpy.array([center[0]+side_length/2, center[1]-side_length/2, center[2]+side_length/2]),
-			numpy.array([center[0]+side_length/2, center[1]-side_length/2, center[2]-side_length/2]),
-			numpy.array([center[0]+side_length/2, center[1]+side_length/2, center[2]-side_length/2]),
-			numpy.array([center[0]-side_length/2, center[1]+side_length/2, center[2]-side_length/2]),
-			numpy.array([center[0]-side_length/2, center[1]+side_length/2, center[2]+side_length/2]),
-			numpy.array([center[0]+side_length/2, center[1]+side_length/2, center[2]+side_length/2])
+			numpy.array([self.center[0]-side_length/2, self.center[1]-side_length/2, self.center[2]-side_length/2]),
+			numpy.array([self.center[0]-side_length/2, self.center[1]-side_length/2, self.center[2]+side_length/2]),
+			numpy.array([self.center[0]+side_length/2, self.center[1]-side_length/2, self.center[2]+side_length/2]),
+			numpy.array([self.center[0]+side_length/2, self.center[1]-side_length/2, self.center[2]-side_length/2]),
+			numpy.array([self.center[0]+side_length/2, self.center[1]+side_length/2, self.center[2]-side_length/2]),
+			numpy.array([self.center[0]-side_length/2, self.center[1]+side_length/2, self.center[2]-side_length/2]),
+			numpy.array([self.center[0]-side_length/2, self.center[1]+side_length/2, self.center[2]+side_length/2]),
+			numpy.array([self.center[0]+side_length/2, self.center[1]+side_length/2, self.center[2]+side_length/2])
+		]
+		self.attempted_path = [
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]-1])
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]-1])
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]-1])
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]-1])
+			numpy.array([self.center[0], self.center[1], self.center[2]-1])
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]-1])
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]-1])
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]-1])
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]-1])
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]])
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]])
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]])
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]])
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]])
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]])
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]])
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]])
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]+1])
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]+1])
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]+1])
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]+1])
+			numpy.array([self.center[0], self.center[1], self.center[2]+1])
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]+1])
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]+1])
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]+1])
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]+1])
+		]
+
+	def reset_attempted_path(self):
+		self.attempted_path = [
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]-1])
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]-1])
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]-1])
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]-1])
+			numpy.array([self.center[0], self.center[1], self.center[2]-1])
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]-1])
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]-1])
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]-1])
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]-1])
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]])
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]])
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]])
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]])
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]])
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]])
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]])
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]])
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]+1])
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]+1])
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]+1])
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]+1])
+			numpy.array([self.center[0], self.center[1], self.center[2]+1])
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]+1])
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]+1])
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]+1])
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]+1])
 		]
 
 	def get_side(self):
@@ -50,17 +109,8 @@ class Obstacle(object):
 		current_y = self.current_point[1]
 		min_magnitude = 10000000000000
 		point_to_go = self.current_point
-		where_should_i_go = [
-			numpy.array([current_x -1, current_y +1]),
-			numpy.array([current_x -1, current_y]),
-			numpy.array([current_x -1, current_y -1]),
-			numpy.array([current_x, current_y +1]),
-			numpy.array([current_x, current_y -1]),
-			numpy.array([current_x +1, current_y +1]),
-			numpy.array([current_x +1, current_y]),
-			numpy.array([current_x +1, current_y -1])
-		]
-		for point in where_should_i_go:
+
+		for point in self.attempted_path:
 			distance_magnitude_to_the_end = VectorMath.get_magnitude(fin_point, point)
 			if distance_magnitude_to_the_end < min_magnitude:
 				distance_magnitude_to_the_end = min_magnitude

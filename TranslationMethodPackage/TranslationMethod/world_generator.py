@@ -10,6 +10,8 @@ class WorldGenerator(object):
 	def generate_map(self, length, width, height, target_point):
 		new_map = Map(length ,width, height, target_point)
 		return new_map
+	
+	def generate_obstacle(self):
 		
 		
 		
