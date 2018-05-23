@@ -22,13 +22,13 @@ class VectorMath(object):
 		return magnitude
 
 	@staticmethod
-	def get_the_least_value_from_three_numbers(self, one, two, three):
+	def get_the_least_value_from_three_numbers( one, two, three):
 		min_value = 99999999999999999
 		if one < min_value:
 			min_value = one
 			if two < min_value:
 				min_value = two
-				if thre < min_value:
+				if three < min_value:
 					min_value = three
 
 		return min_value
