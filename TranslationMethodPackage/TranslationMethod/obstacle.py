@@ -20,91 +20,91 @@ class Obstacle(object):
 			numpy.array([self.center[0]+side_length/2, self.center[1]+side_length/2, self.center[2]+side_length/2])
 		]
 		self.attempted_path = [
-			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]-1])
-			numpy.array([self.center[0]-1, self.center[1], self.center[2]-1])
-			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]-1])
-			numpy.array([self.center[0], self.center[1]+1, self.center[2]-1])
-			numpy.array([self.center[0], self.center[1], self.center[2]-1])
-			numpy.array([self.center[0], self.center[1]-1, self.center[2]-1])
-			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]-1])
-			numpy.array([self.center[0]+1, self.center[1], self.center[2]-1])
-			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]-1])
-			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]])
-			numpy.array([self.center[0]-1, self.center[1], self.center[2]])
-			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]])
-			numpy.array([self.center[0], self.center[1]+1, self.center[2]])
-			numpy.array([self.center[0], self.center[1]-1, self.center[2]])
-			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]])
-			numpy.array([self.center[0]+1, self.center[1], self.center[2]])
-			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]])
-			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]+1])
-			numpy.array([self.center[0]-1, self.center[1], self.center[2]+1])
-			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]+1])
-			numpy.array([self.center[0], self.center[1]+1, self.center[2]+1])
-			numpy.array([self.center[0], self.center[1], self.center[2]+1])
-			numpy.array([self.center[0], self.center[1]-1, self.center[2]+1])
-			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]+1])
-			numpy.array([self.center[0]+1, self.center[1], self.center[2]+1])
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]-1]),
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]-1]),
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]-1]),
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]-1]),
+			numpy.array([self.center[0], self.center[1], self.center[2]-1]),
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]-1]),
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]-1]),
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]-1]),
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]-1]),
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]]),
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]]),
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]]),
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]]),
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]]),
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]]),
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]]),
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]]),
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]+1]),
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]+1]),
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]+1]),
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]+1]),
+			numpy.array([self.center[0], self.center[1], self.center[2]+1]),
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]+1]),
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]+1]),
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]+1]),
 			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]+1])
 		]
 
 	def reset_attempted_path(self):
 		self.attempted_path = [
-			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]-1])
-			numpy.array([self.center[0]-1, self.center[1], self.center[2]-1])
-			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]-1])
-			numpy.array([self.center[0], self.center[1]+1, self.center[2]-1])
-			numpy.array([self.center[0], self.center[1], self.center[2]-1])
-			numpy.array([self.center[0], self.center[1]-1, self.center[2]-1])
-			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]-1])
-			numpy.array([self.center[0]+1, self.center[1], self.center[2]-1])
-			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]-1])
-			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]])
-			numpy.array([self.center[0]-1, self.center[1], self.center[2]])
-			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]])
-			numpy.array([self.center[0], self.center[1]+1, self.center[2]])
-			numpy.array([self.center[0], self.center[1]-1, self.center[2]])
-			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]])
-			numpy.array([self.center[0]+1, self.center[1], self.center[2]])
-			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]])
-			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]+1])
-			numpy.array([self.center[0]-1, self.center[1], self.center[2]+1])
-			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]+1])
-			numpy.array([self.center[0], self.center[1]+1, self.center[2]+1])
-			numpy.array([self.center[0], self.center[1], self.center[2]+1])
-			numpy.array([self.center[0], self.center[1]-1, self.center[2]+1])
-			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]+1])
-			numpy.array([self.center[0]+1, self.center[1], self.center[2]+1])
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]-1]),
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]-1]),
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]-1]),
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]-1]),
+			numpy.array([self.center[0], self.center[1], self.center[2]-1]),
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]-1]),
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]-1]),
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]-1]),
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]-1]),
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]]),
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]]),
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]]),
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]]),
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]]),
+			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]]),
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]]),
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]]),
+			numpy.array([self.center[0]-1, self.center[1]+1, self.center[2]+1]),
+			numpy.array([self.center[0]-1, self.center[1], self.center[2]+1]),
+			numpy.array([self.center[0]-1, self.center[1]-1, self.center[2]+1]),
+			numpy.array([self.center[0], self.center[1]+1, self.center[2]+1]),
+			numpy.array([self.center[0], self.center[1], self.center[2]+1]),
+			numpy.array([self.center[0], self.center[1]-1, self.center[2]+1]),
+			numpy.array([self.center[0]+1, self.center[1]-1, self.center[2]+1]),
+			numpy.array([self.center[0]+1, self.center[1], self.center[2]+1]),
 			numpy.array([self.center[0]+1, self.center[1]+1, self.center[2]+1])
 		]
 
 	def update_attempted_path(self):
 		self.attempted_path = [
-			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]-1])
-			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]-1])
-			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]-1])
-			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]-1])
-			numpy.array([self.current_point[0], self.current_point[1], self.current_point[2]-1])
-			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]-1])
-			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]-1])
-			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]-1])
-			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]-1])
-			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]])
-			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]])
-			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]])
-			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]])
-			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]])
-			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]])
-			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]])
-			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]])
-			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]+1])
-			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]+1])
-			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]+1])
-			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]+1])
-			numpy.array([self.current_point[0], self.current_point[1], self.current_point[2]+1])
-			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]+1])
-			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]+1])
-			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]+1])
+			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]-1]),
+			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]-1]),
+			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]-1]),
+			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]-1]),
+			numpy.array([self.current_point[0], self.current_point[1], self.current_point[2]-1]),
+			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]-1]),
+			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]-1]),
+			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]-1]),
+			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]-1]),
+			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]]),
+			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]]),
+			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]]),
+			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]]),
+			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]]),
+			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]]),
+			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]]),
+			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]]),
+			numpy.array([self.current_point[0]-1, self.current_point[1]+1, self.current_point[2]+1]),
+			numpy.array([self.current_point[0]-1, self.current_point[1], self.current_point[2]+1]),
+			numpy.array([self.current_point[0]-1, self.current_point[1]-1, self.current_point[2]+1]),
+			numpy.array([self.current_point[0], self.current_point[1]+1, self.current_point[2]+1]),
+			numpy.array([self.current_point[0], self.current_point[1], self.current_point[2]+1]),
+			numpy.array([self.current_point[0], self.current_point[1]-1, self.current_point[2]+1]),
+			numpy.array([self.current_point[0]+1, self.current_point[1]-1, self.current_point[2]+1]),
+			numpy.array([self.current_point[0]+1, self.current_point[1], self.current_point[2]+1]),
 			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]+1])
 		]
 
@@ -134,7 +134,6 @@ class Obstacle(object):
 		return status
 
 	def move(self, fin_point):
-		def move(self):
 		current_x = self.current_point[0]
 		current_y = self.current_point[1]
 		min_magnitude = 10000000000000
@@ -147,3 +146,4 @@ class Obstacle(object):
 				point_to_go = point
 
 		self.set_current_point(point_to_go)
+		self.update_attempted_path()

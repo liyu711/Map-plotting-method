@@ -20,3 +20,17 @@ class VectorMath(object):
 		magnitude = numpy.linalg.norm(vector)
 
 		return magnitude
+
+	@staticmethod
+	def get_the_least_value_from_three_numbers(self, one, two, three):
+		min_value = 99999999999999999
+		if one < min_value:
+			min_value = one
+			if two < min_value:
+				min_value = two
+				if thre < min_value:
+					min_value = three
+
+		return min_value
+
+
