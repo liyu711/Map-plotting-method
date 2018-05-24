@@ -34,5 +34,5 @@ class ObstacleTestCase(unittest.TestCase):
 		self.obstacle2.filtering_path(self.obstacle1)
 		print(self.obstacle2.attempted_path)
 
-		sss
+	
 
