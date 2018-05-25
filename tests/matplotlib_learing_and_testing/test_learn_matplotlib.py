@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt 
-from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d import axes3d
 import numpy
 import csv
 import datetime as dt
@@ -8,6 +8,7 @@ import urllib
 import matplotlib.animation as animation
 from matplotlib import style
 import multiprocessing
+
 # load local file with csv
 # with open('example.txt', 'r') as csvfile:
 # 	plots = csv.reader(csvfile, delimiter = ',')
@@ -51,13 +52,25 @@ import multiprocessing
 # numpy_time = numpy.vectorize(actual_time)
 # print(numpy_time)
 
-graph_data = open('example.txt').read()
-lines = graph_data.split('\n')
-x, y = line.split(',')
-print(graph_data)
+
+# 3d graphing
+# prepare some coordinates
+x, y, z = numpy.indices((1000, 1000, 1000))
+
+# draw cuboids in the top left and bottom right corners, and a link between them
+cube1 = (x > 2) & (x < 4) & (y < 4) &( y > 2) & (z > 3) & (z < 5)
 
 
+# combine the objects into a single boolean array
+voxels = cube1 | cube2
 
+# set the colors of each object
+colors = numpy.empty(voxels.shape, dtype=object)
+colors[cube1] = 'blue'
 
+# and plot everything
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.voxels(voxels, facecolors=colors, edgecolor='k')
 
-
+plt.show()

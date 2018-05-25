@@ -13,8 +13,8 @@ class Map(object):
 		self.target_point = target_point
 		self.obstacles = numpy.array([])
 		self.special_boundary_points = [
-			numpy.array([-self.length/2, -self.width/2, -self.height/2]),
-			numpy.array([self.length/2, self.width/2, self.height/2])
+			numpy.array([0, 0, 0]),
+			numpy.array([self.length, self.width, self.height])
 		]
 
 	def add_obstacle(self, obstacle):
@@ -25,4 +25,7 @@ class Map(object):
 
 	def add_obstacles(self, obstacles):
 		for obstacle in obstacles:
-			self.add_obstacle(obstacle)	
+			self.add_obstacle(obstacle)
+
+	def get_target_point(self):
+		return self.target_point

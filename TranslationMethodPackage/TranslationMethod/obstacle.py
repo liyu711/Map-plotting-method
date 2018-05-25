@@ -108,6 +108,12 @@ class Obstacle(object):
 			numpy.array([self.current_point[0]+1, self.current_point[1]+1, self.current_point[2]+1])
 		]
 
+	def get_cubic_value_for_plotting(self, current_map):
+		x, y, z = numpy.indices((current_map.length, current_map.width, current_map.height))
+		cubic_value = (x > self.boundary_points[0][0]) & (x < self.boundary_points[7][0]) & (y > self.boundary_points[0][1]) & (y < self.boundary_points[7][1]) & (z > self.boundary_points[0][2]) & (z < self.boundary_points[7][2])
+
+		return cubic_value
+
 	def get_side(self):
 		return self.side_length
 
