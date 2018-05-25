@@ -35,4 +35,3 @@ class ObstacleTestCase(unittest.TestCase):
 		print(self.obstacle2.attempted_path)
 
 	
-
