@@ -16,7 +16,7 @@ class VectorMath(object):
 		return magnitude
 
 	@staticmethod
-	def get_magnitude(vector):
+	def get_single_magnitude(vector):
 		magnitude = numpy.linalg.norm(vector)
 
 		return magnitude

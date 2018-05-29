@@ -24,14 +24,14 @@ class WorldGeneratorTestCase(unittest.TestCase):
 		list_of_obstacles = self.generator.generate_obstacle(1000, map1)
 		for obstacle in list_of_obstacles:
 			self.assertEqual(obstacle.side_length <25, True)
-			self.assertEqual(obstacle.center[0] > (-50+obstacle.side_length) and obstacle.center[0] < (50-obstacle.side_length), True)
-			self.assertEqual(obstacle.center[1] > (-25+obstacle.side_length) and obstacle.center[1] < (25-obstacle.side_length), True)
-			self.assertEqual(obstacle.center[2] > (-25+obstacle.side_length) and obstacle.center[2] < (25-obstacle.side_length), True)
+			self.assertEqual(obstacle.center[0] > (0+obstacle.side_length) and obstacle.center[0] < (100-obstacle.side_length), True)
+			self.assertEqual(obstacle.center[1] > (0+obstacle.side_length) and obstacle.center[1] < (50-obstacle.side_length), True)
+			self.assertEqual(obstacle.center[2] > (0+obstacle.side_length) and obstacle.center[2] < (50-obstacle.side_length), True)
 
 		map2 = self.generator.generate_map(200, 150, 60, self.target_point)
 		list_of_obstacles2 = self.generator.generate_obstacle(1000, map2)
 		for obstacle in list_of_obstacles2:
 			self.assertEqual(obstacle.side_length <30, True)
-			self.assertEqual(obstacle.center[0] > (-100+obstacle.side_length) and obstacle.center[0] < (100-obstacle.side_length), True)
-			self.assertEqual(obstacle.center[1] > (-75+obstacle.side_length) and obstacle.center[1] < (75-obstacle.side_length), True)
-			self.assertEqual(obstacle.center[2] > (-30+obstacle.side_length) and obstacle.center[2] < (30-obstacle.side_length), True)
+			self.assertEqual(obstacle.center[0] > (0+obstacle.side_length) and obstacle.center[0] < (200-obstacle.side_length), True)
+			self.assertEqual(obstacle.center[1] > (0+obstacle.side_length) and obstacle.center[1] < (150-obstacle.side_length), True)
+			self.assertEqual(obstacle.center[2] > (0+obstacle.side_length) and obstacle.center[2] < (60-obstacle.side_length), True)

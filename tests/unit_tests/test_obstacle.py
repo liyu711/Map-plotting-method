@@ -1,5 +1,6 @@
 import unittest
 from TranslationMethod import Obstacle
+from TranslationMethod import VectorMath
 import numpy
 
 class ObstacleTestCase(unittest.TestCase):
@@ -29,9 +30,16 @@ class ObstacleTestCase(unittest.TestCase):
 		self.assertEqual(result3, False)
 		self.assertEqual(result4, True)
 
-	def test_filtering_path(self):
+	def test_filtering_path_and_move(self):
+		fin_point = numpy.array([4,0,0])
+		min_magnitude = 9999
+		self.obstacle2.reset_current_point()
 		self.obstacle2.reset_attempted_path()
-		self.obstacle2.filtering_path(self.obstacle1)
-		print(self.obstacle2.attempted_path)
-
-	
+		print(self.obstacle2.get_current_point())
+		point_to_go = self.obstacle2.get_current_point()
+		boolean = self.obstacle2.get_current_point()[0] != fin_point[0] or self.obstacle2.get_current_point()[1] != fin_point[1] or self.obstacle2.get_current_point()[2] != fin_point[2]
+		while boolean:
+			self.obstacle2.filtering_path(self.obstacle1)
+			self.obstacle2.move(fin_point)
+			print(self.obstacle2.get_current_point())
+			boolean = self.obstacle2.get_current_point()[0] != fin_point[0] or self.obstacle2.get_current_point()[1] != fin_point[1] or self.obstacle2.get_current_point()[2] != fin_point[2]

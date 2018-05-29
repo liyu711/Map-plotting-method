@@ -1,4 +1,5 @@
 import numpy
+from TranslationMethod import VectorMath
 
 class Obstacle(object):
 	"""docstring for Obstacle"""
@@ -150,15 +151,13 @@ class Obstacle(object):
 			loop_index += 1
 
 	def move(self, fin_point):
-		current_x = self.current_point[0]
-		current_y = self.current_point[1]
 		min_magnitude = 10000000000000
 		point_to_go = self.current_point
 
 		for point in self.attempted_path:
 			distance_magnitude_to_the_end = VectorMath.get_magnitude(fin_point, point)
 			if distance_magnitude_to_the_end < min_magnitude:
-				distance_magnitude_to_the_end = min_magnitude
+				min_magnitude = distance_magnitude_to_the_end
 				point_to_go = point
 
 		self.set_current_point(point_to_go)
