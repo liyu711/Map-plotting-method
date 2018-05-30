@@ -32,5 +32,3 @@ class VectorMath(object):
 					min_value = three
 
 		return min_value
-
-

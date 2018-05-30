@@ -55,14 +55,14 @@ import multiprocessing
 
 # 3d graphing
 # prepare some coordinates
-x, y, z = numpy.indices((1000, 1000, 1000))
+x, y, z = numpy.indices((100, 100, 100))
 
 # draw cuboids in the top left and bottom right corners, and a link between them
 cube1 = (x > 2) & (x < 4) & (y < 4) &( y > 2) & (z > 3) & (z < 5)
 
 
 # combine the objects into a single boolean array
-voxels = cube1 | cube2
+voxels = cube1 
 
 # set the colors of each object
 colors = numpy.empty(voxels.shape, dtype=object)
